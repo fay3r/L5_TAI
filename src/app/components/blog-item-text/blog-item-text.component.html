@@ -1,7 +1,12 @@
-<p>
-  {{ text | summary:35 }}
-</p>
-<a [routerLink]="['/blog/detail/1']">
-  Więcej
-</a>
+<div class="container">
+  <p style="font-weight: bold">
+    {{ text | summary:35 }}
+  </p>
+  <button type="button" class="btn-info"
+          [routerLink]="['/blog/detail/',id]"
+          style="margin-bottom: 10px">
+    Więcej
+  </button>
+</div>
+
 

@@ -4,12 +4,21 @@ import {HttpClient} from "@angular/common/http";
 @Injectable()
 export class DataService {
 
-  private url = 'https://jsonplaceholder.typicode.com/photos'
+  private url = 'https://blogtai.herokuapp.com'
 
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(this.url);
+    return this.http.get(this.url + '/api/posts/');
   }
+
+  getById(id: any){
+    return this.http.get(this.url + '/api/posts/' +id );
+  }
+
+  getByText(data:any) {
+    return this.http.post(this.url + '/api/posts/', data);
+  }
+
 
 }
